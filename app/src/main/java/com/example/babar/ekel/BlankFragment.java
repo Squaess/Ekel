@@ -9,8 +9,12 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -44,5 +48,11 @@ public class BlankFragment extends Fragment {
 
         ViewGroup root = getActivity().findViewById(R.id.fragment);
         root.addView(progressBar);
+
+        String meals[] = {"Spaghetti","Placek po wegiersku","Jajecznica","Kurczak Tajwański","Kurczak Belgijski","Pizza margarita","Kawior","Białe trufle","Kebab","Schabowy","Mielony","Kaczka","Dziczyzna","Pasztet"};
+        ArrayList<String> mealsL = new ArrayList<>();
+        mealsL.addAll(Arrays.asList(meals));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_view_row, mealsL);
+        listView.setAdapter(adapter);
     }
 }
