@@ -1,20 +1,18 @@
 package com.example.babar.ekel;
 
-
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
+
+import com.example.babar.ekel.MyListView.CustomAdapter;
+import com.example.babar.ekel.MyListView.DataModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /**
@@ -22,6 +20,9 @@ import java.util.Arrays;
  */
 public class BlankFragment extends Fragment {
 
+    private ListView listView;
+    ArrayList<DataModel> dataModels;
+    private static CustomAdapter adapter;
 
     public BlankFragment() {
         // Required empty public constructor
@@ -39,20 +40,55 @@ public class BlankFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ProgressBar progressBar = new ProgressBar(getContext());
-        progressBar.setLayoutParams(new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,
-                ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
-        progressBar.setIndeterminate(true);
-        ListView listView = getActivity().findViewById(R.id.fragment_list_view);
-        listView.setEmptyView(progressBar);
+        listView = getActivity().findViewById(R.id.fragment_listView);
+        dataModels = new ArrayList<>();
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("aaaaaaaaa","12"));
+        dataModels.add(new DataModel("sssssssss","12"));
+        dataModels.add(new DataModel("ddddddddd","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("fffffffff","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("ggggggggg","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","22"));
+        dataModels.add(new DataModel("Spaghetti","33.8"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","1234"));
+        dataModels.add(new DataModel("Spaghetti","234"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","3456"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
+        dataModels.add(new DataModel("Spaghetti","12"));
 
-        ViewGroup root = getActivity().findViewById(R.id.fragment);
-        root.addView(progressBar);
-
-        String meals[] = {"Spaghetti","Placek po wegiersku","Jajecznica","Kurczak Tajwański","Kurczak Belgijski","Pizza margarita","Kawior","Białe trufle","Kebab","Schabowy","Mielony","Kaczka","Dziczyzna","Pasztet"};
-        ArrayList<String> mealsL = new ArrayList<>();
-        mealsL.addAll(Arrays.asList(meals));
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_view_row, mealsL);
+        adapter = new CustomAdapter(dataModels, getContext().getApplicationContext());
         listView.setAdapter(adapter);
+
+
     }
+
+
 }

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.birin:easylistviewadapters-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easylistviewadapters-1.0.0.aar/cb773f57174f1e8c567e1f94dfa06062/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easylistviewadapters-1.0.0.aar/cb773f57174f1e8c567e1f94dfa06062/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.birin/easylistviewadapters/1.0.0/51940697726f72e551c796908e17d24a3eaf1089/easylistviewadapters-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
