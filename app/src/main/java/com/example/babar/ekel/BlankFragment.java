@@ -3,6 +3,7 @@ package com.example.babar.ekel;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,16 @@ import android.widget.ListView;
 
 import com.example.babar.ekel.MyListView.CustomAdapter;
 import com.example.babar.ekel.MyListView.DataModel;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 
 import java.util.ArrayList;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -23,6 +32,8 @@ public class BlankFragment extends Fragment {
     private ListView listView;
     ArrayList<DataModel> dataModels;
     private static CustomAdapter adapter;
+
+    public static final String BASE_URL = "localhost:8080/";
 
     public BlankFragment() {
         // Required empty public constructor
@@ -86,7 +97,6 @@ public class BlankFragment extends Fragment {
 
         adapter = new CustomAdapter(dataModels, getContext().getApplicationContext());
         listView.setAdapter(adapter);
-
 
     }
 
