@@ -26,47 +26,8 @@ public class MainActivity extends FragmentActivity {
 
         mealNames = new ArrayList<>();
 
-        textView = findViewById(R.id.testTextView);
-        fetchData();
-    }
-
-    private void fetchData() {
-        String urlString = "http://10.0.2.2:8080/get/meal/all";
-        Ion.with(this).load(urlString).asString().setCallback(new FutureCallback<String>() {
-            @Override
-            public void onCompleted(Exception e, String result) {
-                try {
-                    JSONObject json = new JSONObject(result);
-                    processData(json);
-                } catch (JSONException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
-    }
-
-    private void processData(JSONObject json) {
-        try {
-            JSONArray array = json.getJSONArray("content");
-
-            for (int i = 0; i<array.length(); i++){
-                JSONObject o = array.getJSONObject(i);
-                 mealNames.add(o.getString("mealName"));
-            }
-            final StringBuilder last = new StringBuilder();
-            for (String s: mealNames){
-                last.append(s).append(" ");
-            }
-            Log.i("LOL","Joke is");
-            textView.post(new Runnable() {
-                @Override
-                public void run() {
-                    textView.setText(last);
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+      //  textView = findViewById(R.id.testTextView);
+     //  fetchData();
     }
 
 }

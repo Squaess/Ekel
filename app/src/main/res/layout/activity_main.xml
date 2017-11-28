@@ -8,17 +8,17 @@
     tools:context="com.example.babar.ekel.MainActivity" >
 
 
-<!--
+
     <fragment
         android:name="com.example.babar.ekel.BlankFragment"
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-        !-->
-    <TextView
-        android:id="@+id/testTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--
+     <TextView
+         android:id="@+id/testTextView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" /> !-->
 
 </LinearLayout>
